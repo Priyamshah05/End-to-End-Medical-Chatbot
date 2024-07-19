@@ -1,70 +1,85 @@
-# End-to-end-Medical-Chatbot-using-Llama2
 
-# How to run?
-### STEPS:
+# Llama2 Medical Bot
 
-Clone the repository
+The Llama2 Medical Bot is a powerful tool designed to provide medical information by answering user queries using state-of-the-art language models and vector stores. This README will guide you through the setup and usage of the Llama2 Medical Bot.
 
-```bash
-Project repo: https://github.com/
-```
+## Table of Contents
 
-### STEP 01- Create a conda environment after opening the repository
+- [Introduction](#langchain-medical-bot)
+- [Table of Contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-```bash
-conda create -n mchatbot python=3.8 -y
-```
+## Prerequisites
 
-```bash
-conda activate mchatbot
-```
+Before you can start using the Llama2 Medical Bot, make sure you have the following prerequisites installed on your system:
 
-### STEP 02- install the requirements
-```bash
-pip install -r requirements.txt
-```
+- Python 3.6 or higher
+- Required Python packages (you can install them using pip):
+    - langchain
+    - chainlit
+    - sentence-transformers
+    - faiss
+    - PyPDF2 (for PDF document loading)
 
+## Installation
 
-### Create a `.env` file in the root directory and add your Pinecone credentials as follows:
+1. Clone this repository to your local machine.
 
-```ini
-PINECONE_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-PINECONE_API_ENV = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-```
+    ```bash
+    git clone https://github.com/your-username/langchain-medical-bot.git
+    cd medicalchatbot #your own virtual environment
+    ```
 
+2. Create a Python virtual environment (optional but recommended):
 
-### Download the quantize model from the link provided in model folder & keep the model in the model directory:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+    ```
 
-```ini
-## Download the Llama 2 Model:
+3. Install the required Python packages:
 
-llama-2-7b-chat.ggmlv3.q4_0.bin
+    ```bash
+    pip install -r requirements.txt
+    ```
 
+4. Download the required language models and data. Please refer to the Langchain documentation for specific instructions on how to download and set up the language model and vector store.
 
-## From the following link:
-https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/tree/main
-```
+5. Set up the necessary paths and configurations in your project, including the `DB_FAISS_PATH` variable and other configurations as per your needs.
 
-```bash
-# run the following command
-python store_index.py
-```
+## Getting Started
 
-```bash
-# Finally run the following command
-python app.py
-```
+To get started with the Llama2 Medical Bot, you need to:
 
-Now,
-```bash
-open up localhost:
-```
+1. Set up your environment and install the required packages as described in the Installation section.
 
+2. Configure your project by updating the `DB_FAISS_PATH` variable and any other custom configurations in the code.
 
-### Techstack Used:
+3. Prepare the language model and data as per the Langchain documentation.
 
-- Python
-- LangChain
-- Flask
-- Meta Llama2
-- Pinecone
+4. Start the bot by running the provided Python script or integrating it into your application.
+
+## Usage
+
+The Llama2 Medical Bot can be used for answering medical-related queries. To use the bot, you can follow these steps:
+
+1. Start the bot by running your application or using the provided Python script.
+
+2. Send a medical-related query to the bot.
+
+3. The bot will provide a response based on the information available in its database.
+
+4. If sources are found, they will be provided alongside the answer.
+
+5. The bot can be customized to return specific information based on the query and context provided.
+
+## License
+
+This project is licensed under the MIT License.
+
+---
